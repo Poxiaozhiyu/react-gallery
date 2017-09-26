@@ -34,7 +34,7 @@ function getDefaultModules() {
       },
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version", "Firefox 15"]}!sass-loader?outputStyle=expanded'
+        loader: 'sass-loader?outputStyle=expanded!style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version", "Firefox 15"]}'
       },
       {
         test: /\.less/,
