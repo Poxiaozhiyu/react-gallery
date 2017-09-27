@@ -92,7 +92,7 @@ class ImgFigure extends React.Component {
         />
         <figcaption>
           <h2 className="img-title">{this.props.data.title}</h2>
-          <div className="img-back" onClick={this.handleClick}>
+          <div className="img-back" onClick={this.handleClick.bind(this)}>
             <p>
               {this.props.data.desc}
             </p>
@@ -119,20 +119,20 @@ class ControllerUnit extends React.Component{
     }
 
     render() {
-      var controlelrUnitClassName = 'controller-unit';
+      var controllerUnitClassName = 'controller-unit';
 
       // 如果对应的是居中的图片，显示控制按钮的居中态
       if (this.props.arrange.isCenter) {
-        controlelrUnitClassName += ' is-center';
+        controllerUnitClassName += ' is-center';
 
         // 如果同时对应的是翻转图片， 显示控制按钮的翻转态
         if (this.props.arrange.isInverse) {
-          controlelrUnitClassName += ' is-inverse';
+          controllerUnitClassName += ' is-inverse';
         }
       }
 
       return (
-        <span className={controlelrUnitClassName} onClick={this.handleClick}></span>
+        <span className={controllerUnitClassName} onClick={this.handleClick.bind(this)}></span>
       );
     }
 }
