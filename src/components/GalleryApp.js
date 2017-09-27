@@ -3,8 +3,25 @@ require('styles/GalleryApp.scss');
 
 import React from 'react';
 
+
 // 获取图片相关的数据
-var imageDatas = require('../datas/imageDatas.json');
+var imageDatas = require('datas/imageDatas.json'),
+    len = imageDatas.length,
+    picNum = 10,
+    start = Math.floor(Math.random() * len),
+    end = start + picNum;
+imageDatas = imageDatas.sort(function() {
+  return Math.random() - 0.5;
+});    // 随机排序
+imageDatas = imageDatas.filter(function(item, index) {
+  if (index >= start && index < end) {
+    return true;
+  }
+  if (index + len >= start && index + len < end) {
+    return true;
+  }
+  return false;
+});
 
 // 插入图片链接
 imageDatas = (function genImageURL(imageDatasArr) {
