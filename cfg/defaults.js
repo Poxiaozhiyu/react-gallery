@@ -26,7 +26,7 @@ function getDefaultModules() {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss?{autoprefixer: {browsers: ["last 2 version", "Firefox 15"]}}'
+        loader: 'style-loader!css-loader!autoprefixer?{browsers: ["last 2 version", "Firefox 15"]}'
       },
       {
         test: /\.sass/,
@@ -34,7 +34,7 @@ function getDefaultModules() {
       },
       {
         test: /\.scss/,
-        loader: 'sass-loader?outputStyle=expanded!style-loader!css-loader!autoprefixer-loader?{browsers:["last 2 version", "Firefox 15"]}'
+        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded!autoprefixer-loader?{browsers:["last 2 version", "Firefox 15"]}'
       },
       {
         test: /\.less/,
